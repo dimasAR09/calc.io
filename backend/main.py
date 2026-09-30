@@ -6,7 +6,7 @@ import numpy as np
 
 app = FastAPI()
 
-RAPIDAPI_SECRET = "kunci-rahasia-calcio-123"
+RAPIDAPI_SECRET = "8d462410-bcb6-11f1-88c1-6f0c1f6eddd7"
 
 app.add_middleware(
     CORSMiddleware,
