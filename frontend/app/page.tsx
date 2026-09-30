@@ -279,7 +279,7 @@ export default function CombinedTools() {
                 </h2>
                 <p className="text-gray-600 text-sm leading-relaxed mb-4 text-justify">
                   {lang === "id"
-                      ? "Analysis of Variance (ANOVA) adalah metode komputasi statistik yang digunakan untuk membandingkan rata-rata dari tiga kelompok populasi atau lebih secara bersamaan. P-Value yang dihasilkan (jika < 0.05) menunjukkan bahwa terdapat perbedaan yang signifikan secara statistik antar kelompok tersebut, yang sering digunakan dalam analisis data asuransi, medis, maupun penelitian akademik."
+                      ? "Analysis of Variance (ANOVA) sebuah metode komputasi statistik yang digunakan untuk membandingkan rata-rata dari tiga kelompok populasi atau lebih secara bersamaan. P-Value yang dihasilkan (jika < 0.05) menunjukkan bahwa terdapat perbedaan yang signifikan secara statistik antar kelompok tersebut, yang sering digunakan dalam analisis data asuransi, medis, maupun penelitian akademik."
                       : "Analysis of Variance (ANOVA) is a statistical computational method used to simultaneously compare the means of three or more population groups. The resulting P-Value (if < 0.05) indicates a statistically significant difference between the groups, widely used in insurance data analysis, medical fields, and academic research."}
                 </p>
               </div>
