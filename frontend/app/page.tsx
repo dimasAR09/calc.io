@@ -94,7 +94,7 @@ export default function CombinedTools() {
       const payload = parseExcelData(anovaData);
       if (payload.group_a.length === 0) throw new Error(t.errorDefault);
 
-      const response = await fetch("http://localhost:8001/api/calculate-anova", {
+      const response = await fetch("https://calcio-436f8203.fastapicloud.dev/api/calculate-anova", {
         method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload),
       });
       if (!response.ok) throw new Error(t.errorDefault);
@@ -126,7 +126,7 @@ export default function CombinedTools() {
       const dataset = parseSingleColumn(zData);
       if (dataset.length === 0) throw new Error(t.errorDefault);
 
-      const response = await fetch("http://localhost:8001/api/calculate-zscore", {
+      const response = await fetch("https://calcio-436f8203.fastapicloud.dev/api/calculate-zscore", {
         method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ dataset }),
       });
       if (!response.ok) throw new Error(t.errorDefault);

@@ -1,0 +1,5 @@
+scipy~=1.18.1
+numpy~=2.5.3
+fastapi[standard]
+pydantic~=2.13.5
+uvicorn
