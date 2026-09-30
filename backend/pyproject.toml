@@ -6,13 +6,11 @@ build-backend = "setuptools.build_meta"
 name = "calc_io_backend"
 version = "0.1.0"
 dependencies = [
-    "fastapi",
-    "uvicorn",
+    "fastapi[standard]",
     "pydantic",
     "numpy",
     "scipy"
 ]
 
 [tool.fastapi]
-# Menentukan letak file utama agar sistem tidak mencarinya secara manual
 main = "main:app"
