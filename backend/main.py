@@ -1,10 +1,12 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import scipy.stats as stats
 import numpy as np
 
 app = FastAPI()
+
+RAPIDAPI_SECRET = "kunci-rahasia-calcio-123"
 
 app.add_middleware(
     CORSMiddleware,
@@ -21,7 +23,11 @@ class AnovaRequest(BaseModel):
     group_c: list[float]
 
 @app.post("/api/calculate-anova")
-def calculate_anova(data: AnovaRequest):
+def calculate_anova(data: AnovaRequest, x_rapidapi_proxy_secret: str = Header(None)):
+
+    if x_rapidapi_proxy_secret != RAPIDAPI_SECRET:
+        raise HTTPException(status_code=403, detail="Akses ditolak.")
+
     f_stat, p_value = stats.f_oneway(data.group_a, data.group_b, data.group_c)
     return {
         "f_statistic": round(f_stat, 4),
@@ -34,7 +40,11 @@ class ZScoreRequest(BaseModel):
     dataset: list[float]
 
 @app.post("/api/calculate-zscore")
-def calculate_zscore(data: ZScoreRequest):
+def calculate_zscore(data: ZScoreRequest, x_rapidapi_proxy_secret: str = Header(None)):
+
+    if x_rapidapi_proxy_secret != RAPIDAPI_SECRET:
+        raise HTTPException(status_code=403, detail="Akses ditolak.")
+
     dataset = data.dataset
     if not dataset:
         return {"error": "Dataset kosong"}

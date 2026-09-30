@@ -95,7 +95,7 @@ export default function CombinedTools() {
       if (payload.group_a.length === 0) throw new Error(t.errorDefault);
 
       const response = await fetch("https://calcio-436f8203.fastapicloud.dev/api/calculate-anova", {
-        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload),
+        method: "POST", headers: { "Content-Type": "application/json", "x-rapidapi-proxy-secret": "kunci-rahasia-calcio-123"}, body: JSON.stringify(payload),
       });
       if (!response.ok) throw new Error(t.errorDefault);
 
@@ -127,7 +127,7 @@ export default function CombinedTools() {
       if (dataset.length === 0) throw new Error(t.errorDefault);
 
       const response = await fetch("https://calcio-436f8203.fastapicloud.dev/api/calculate-zscore", {
-        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ dataset }),
+        method: "POST", headers: { "Content-Type": "application/json", "x-rapidapi-proxy-secret": "kunci-rahasia-calcio-123" }, body: JSON.stringify({ dataset }),
       });
       if (!response.ok) throw new Error(t.errorDefault);
 
