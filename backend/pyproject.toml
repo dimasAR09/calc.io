@@ -3,8 +3,16 @@ requires = ["setuptools>=61.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "calc-io-backend"
+name = "calc_io_backend"
 version = "0.1.0"
 dependencies = [
-    # Membaca langsung dari requirements.txt
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "numpy",
+    "scipy"
 ]
+
+[tool.fastapi]
+# Menentukan letak file utama agar sistem tidak mencarinya secara manual
+main = "main:app"
